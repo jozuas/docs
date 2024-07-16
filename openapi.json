@@ -1,0 +1,2820 @@
+{
+  "components": {
+    "responses": {},
+    "schemas": {
+      "BondMifidTradesResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "description": "List of trade objects, ordered by trade date.",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "file_hash": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "isin": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "notional_amount": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "notional_currency": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "pos_in_file": {
+                  "nullable": true,
+                  "type": "integer",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "previous_transaction_id": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "price": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "price_currency": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "price_type": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "publication_datetime": {
+                  "format": "date-time",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "quantity": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "ticker": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "trade_datetime": {
+                  "format": "date-time",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "transaction_id": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "venue": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                }
+              },
+              "required": [
+                "file_hash",
+                "pos_in_file",
+                "price",
+                "price_type",
+                "price_currency",
+                "isin",
+                "trade_datetime",
+                "publication_datetime",
+                "quantity",
+                "notional_amount",
+                "notional_currency",
+                "transaction_id",
+                "previous_transaction_id",
+                "venue",
+                "ticker"
+              ],
+              "type": "object",
+              "x-struct": null,
+              "x-validate": null
+            },
+            "type": "array",
+            "x-struct": null,
+            "x-validate": null
+          },
+          "total": {
+            "description": "Total number of trades for these query parameters. Should be used to programatically iterate over the offset parameter.",
+            "type": "integer",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "required": [
+          "data",
+          "total"
+        ],
+        "title": "BondMifidTradesResponse",
+        "type": "object",
+        "x-struct": "Elixir.TpWeb.Controllers.Api.BondMifidTrades.BondMifidTradesResponse",
+        "x-validate": null
+      },
+      "BondPricingHistoryResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "description": "List of pricing data objects, ordered by trade date.",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "date": {
+                  "description": "Trade date in ISO-8601.",
+                  "format": "date",
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "price": {
+                  "description": "Price of the bond at last trade of the day.",
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "yield_to_maturity": {
+                  "description": "Yield to maturity, with trade date as reference date from which the yield is calculated.",
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                }
+              },
+              "required": [
+                "price",
+                "date",
+                "yield_to_maturity"
+              ],
+              "type": "object",
+              "x-struct": null,
+              "x-validate": null
+            },
+            "type": "array",
+            "x-struct": null,
+            "x-validate": null
+          },
+          "total": {
+            "description": "Total number of pricing data objects found.",
+            "type": "integer",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "required": [
+          "data",
+          "total"
+        ],
+        "title": "BondPricingHistoryResponse",
+        "type": "object",
+        "x-struct": "Elixir.TpWeb.Controllers.Api.BondPricingHistory.BondPricingHistoryResponse",
+        "x-validate": null
+      },
+      "BondPricingLatestResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "description": "List of latest pricing data objects per bond.",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "duration": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "isin": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "last_trade_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "price": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "yield_to_maturity": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                }
+              },
+              "required": [
+                "isin",
+                "price",
+                "yield_to_maturity",
+                "duration",
+                "last_trade_date"
+              ],
+              "type": "object",
+              "x-struct": null,
+              "x-validate": null
+            },
+            "type": "array",
+            "x-struct": null,
+            "x-validate": null
+          },
+          "total": {
+            "description": "Total number of latest pricing data objects found.",
+            "type": "integer",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "required": [
+          "data",
+          "total"
+        ],
+        "title": "BondPricingLatestResponse",
+        "type": "object",
+        "x-struct": "Elixir.TpWeb.Controllers.Api.BondPricingLatest.BondPricingLatestResponse",
+        "x-validate": null
+      },
+      "BondReferenceResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "description": "List of reference data objects per bond.",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "tp_industry_group": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "day_count_convention": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "lt_issuer_tpc": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "isin": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "rank": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "st_issue_tpc": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "handle": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "alternative_names": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "puttable": {
+                  "nullable": true,
+                  "type": "boolean",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "is_144a": {
+                  "nullable": true,
+                  "type": "boolean",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "issuer_type": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "asset_class": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "registration_type": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "is_regs": {
+                  "nullable": true,
+                  "type": "boolean",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "issuer": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "currency": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "coupon_frequency": {
+                  "nullable": true,
+                  "type": "integer",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "min_increment": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "lei_ultimate_parent": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "lei_direct_parent": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "st_issuer_tpc": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "tp_sector": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "is_outstanding": {
+                  "nullable": true,
+                  "type": "boolean",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "interest_accrual_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "issued_amount": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "figi": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "is_inflation_linked": {
+                  "nullable": true,
+                  "type": "boolean",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "maturity_type": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "lt_issue_tpc": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "country": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "maturity_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "is_green": {
+                  "nullable": true,
+                  "type": "boolean",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "cfi_code": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "coupon": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "callable": {
+                  "nullable": true,
+                  "type": "boolean",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "issued_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "ticker": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "is_covered": {
+                  "nullable": true,
+                  "type": "boolean",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "name": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "lei": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "interest_type": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                }
+              },
+              "required": [
+                "isin",
+                "ticker",
+                "issuer_type",
+                "currency",
+                "country",
+                "handle",
+                "coupon",
+                "coupon_frequency",
+                "maturity_date",
+                "maturity_type",
+                "issued_date",
+                "issued_amount",
+                "min_increment",
+                "asset_class",
+                "interest_accrual_date",
+                "interest_type",
+                "day_count_convention",
+                "callable",
+                "puttable",
+                "rank",
+                "is_covered",
+                "is_green",
+                "is_inflation_linked",
+                "is_outstanding",
+                "registration_type",
+                "is_regs",
+                "is_144a",
+                "cfi_code",
+                "figi",
+                "lei",
+                "lei_direct_parent",
+                "lei_ultimate_parent",
+                "issuer",
+                "tp_sector",
+                "tp_industry_group",
+                "lt_issuer_tpc",
+                "st_issuer_tpc",
+                "lt_issue_tpc",
+                "st_issue_tpc",
+                "name",
+                "alternative_names"
+              ],
+              "type": "object",
+              "x-struct": null,
+              "x-validate": null
+            },
+            "type": "array",
+            "x-struct": null,
+            "x-validate": null
+          },
+          "total": {
+            "description": "Total number of reference data objects found.",
+            "type": "integer",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "required": [
+          "data",
+          "total"
+        ],
+        "title": "BondReferenceResponse",
+        "type": "object",
+        "x-struct": "Elixir.TpWeb.Controllers.Api.BondReference.BondReferenceResponse",
+        "x-validate": null
+      },
+      "BondScreenerResponse": {
+        "additionalProperties": false,
+        "description": "Search data response schema.",
+        "properties": {
+          "data": {
+            "description": "List of search data objects per bond. Contains at most 1000 objects.",
+            "items": {
+              "additionalProperties": false,
+              "description": "Search response schema per bond.",
+              "properties": {
+                "country": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "coupon": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "currency": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "isin": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "maturity_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "name": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                }
+              },
+              "required": [
+                "name",
+                "isin",
+                "currency",
+                "coupon",
+                "maturity_date",
+                "country"
+              ],
+              "type": "object",
+              "x-struct": null,
+              "x-validate": null
+            },
+            "type": "array",
+            "x-struct": null,
+            "x-validate": null
+          },
+          "total": {
+            "description": "Total number of results in the database that match the query filters.",
+            "type": "integer",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "required": [
+          "data",
+          "total"
+        ],
+        "title": "BondScreenerResponse",
+        "type": "object",
+        "x-struct": "Elixir.TpWeb.Controllers.Api.BondScreener.BondScreenerResponse",
+        "x-validate": null
+      },
+      "JsonErrorResponse": {
+        "properties": {
+          "errors": {
+            "items": {
+              "properties": {
+                "detail": {
+                  "example": "null value where string expected",
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "source": {
+                  "properties": {
+                    "pointer": {
+                      "example": "/data/attributes/petName",
+                      "type": "string",
+                      "x-struct": null,
+                      "x-validate": null
+                    }
+                  },
+                  "required": [
+                    "pointer"
+                  ],
+                  "type": "object",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "title": {
+                  "example": "Invalid value",
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                }
+              },
+              "required": [
+                "title",
+                "source",
+                "detail"
+              ],
+              "type": "object",
+              "x-struct": null,
+              "x-validate": null
+            },
+            "type": "array",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "required": [
+          "errors"
+        ],
+        "title": "JsonErrorResponse",
+        "type": "object",
+        "x-struct": "Elixir.OpenApiSpex.JsonErrorResponse",
+        "x-validate": null
+      },
+      "JsonErrorResponse2": {
+        "properties": {
+          "errors": {
+            "properties": {
+              "detail": {
+                "example": "Unauthorized",
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "reason": {
+                "example": "You have exceeded your allowed request quota in the current period",
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              }
+            },
+            "required": [
+              "detail"
+            ],
+            "type": "object",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "required": [
+          "errors"
+        ],
+        "title": "JsonErrorResponse2",
+        "type": "object",
+        "x-struct": "Elixir.TpWeb.OpenApi.JsonErrorResponse2",
+        "x-validate": null
+      },
+      "MuniReferenceResponse": {
+        "additionalProperties": false,
+        "properties": {
+          "data": {
+            "description": "List of reference data objects per bond.",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "source_of_repayment": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "isin": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "issue_price": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "series": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "handle": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "coupon_payment_months": {
+                  "items": {
+                    "type": "integer",
+                    "x-struct": null,
+                    "x-validate": null
+                  },
+                  "nullable": true,
+                  "type": "array",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "call_schedule": {
+                  "nullable": true,
+                  "type": "object",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "issue_yield": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "issuer_type": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "currency": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "is_callable": {
+                  "nullable": true,
+                  "type": "boolean",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "issue_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "first_execution_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "coupon_frequency": {
+                  "nullable": true,
+                  "type": "integer",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "is_insured": {
+                  "nullable": true,
+                  "type": "boolean",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "first_trade_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "integral_multiple": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "issuer_name": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "closing_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "first_interest_payment_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "interest_accrual_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "issued_amount": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "figi": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "purpose": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "tax_status": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "country_code": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "minimum_denomination": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "coupon_payment_day": {
+                  "nullable": true,
+                  "type": "integer",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "country": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "dated_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "interest_accrual_convention": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "maturity_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "coupon": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "ticker": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "award_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "state": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "interest_type": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "rating": {
+                  "enum": [
+                    "high_yield",
+                    "investment_grade"
+                  ],
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                }
+              },
+              "required": [
+                "isin",
+                "series",
+                "figi",
+                "ticker",
+                "coupon",
+                "maturity_date",
+                "interest_accrual_convention",
+                "minimum_denomination",
+                "source_of_repayment",
+                "state",
+                "award_date",
+                "first_execution_date",
+                "dated_date",
+                "issue_date",
+                "issued_amount",
+                "first_trade_date",
+                "closing_date",
+                "issuer_type",
+                "issue_yield",
+                "tax_status",
+                "interest_type",
+                "rating",
+                "country",
+                "handle",
+                "issuer_name",
+                "currency",
+                "issue_price",
+                "is_insured",
+                "interest_accrual_date",
+                "purpose",
+                "country_code",
+                "coupon_payment_day",
+                "coupon_payment_months",
+                "coupon_frequency",
+                "first_interest_payment_date",
+                "integral_multiple",
+                "is_callable",
+                "call_schedule"
+              ],
+              "type": "object",
+              "x-struct": null,
+              "x-validate": null
+            },
+            "type": "array",
+            "x-struct": null,
+            "x-validate": null
+          },
+          "total": {
+            "description": "Total number of reference data objects found.",
+            "type": "integer",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "required": [
+          "data",
+          "total"
+        ],
+        "title": "MuniReferenceResponse",
+        "type": "object",
+        "x-struct": "Elixir.TpWeb.Controllers.Api.MuniReference.MuniReferenceResponse",
+        "x-validate": null
+      },
+      "MuniScreenerResponse": {
+        "additionalProperties": false,
+        "description": "Search data response schema.",
+        "properties": {
+          "data": {
+            "description": "List of search data objects per bond. Contains at most 1000 objects.",
+            "items": {
+              "additionalProperties": false,
+              "description": "Search response schema per bond.",
+              "properties": {
+                "coupon": {
+                  "format": "float",
+                  "nullable": true,
+                  "type": "number",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "interest_type": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "is_callable": {
+                  "nullable": true,
+                  "type": "boolean",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "isin": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "issuer_name": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "maturity_date": {
+                  "format": "date",
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "rating": {
+                  "enum": [
+                    "high_yield",
+                    "investment_grade"
+                  ],
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "state": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "tax_status": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                },
+                "ticker": {
+                  "nullable": true,
+                  "type": "string",
+                  "x-struct": null,
+                  "x-validate": null
+                }
+              },
+              "required": [
+                "isin",
+                "ticker",
+                "coupon",
+                "maturity_date",
+                "state",
+                "issuer_name",
+                "interest_type",
+                "rating",
+                "is_callable",
+                "tax_status"
+              ],
+              "type": "object",
+              "x-struct": null,
+              "x-validate": null
+            },
+            "type": "array",
+            "x-struct": null,
+            "x-validate": null
+          },
+          "total": {
+            "description": "Total number of results in the database that match the query filters.",
+            "type": "integer",
+            "x-struct": null,
+            "x-validate": null
+          }
+        },
+        "required": [
+          "data",
+          "total"
+        ],
+        "title": "MuniScreenerResponse",
+        "type": "object",
+        "x-struct": "Elixir.TpWeb.Controllers.Api.MuniScreener.MuniScreenerResponse",
+        "x-validate": null
+      }
+    },
+    "securitySchemes": {
+      "authorization": {
+        "scheme": "bearer",
+        "type": "http"
+      }
+    }
+  },
+  "info": {
+    "title": "Terrapin API",
+    "version": "1.0.0"
+  },
+  "openapi": "3.0.0",
+  "paths": {
+    "/api/v1/bond_mifid_trades": {
+      "get": {
+        "callbacks": {},
+        "description": "This endpoint can return a lot of data, so we strongly recommend using short trade_datetime_min to trade_datetime_max intervals (e.g. 5 minutes) to get faster responses.\n",
+        "operationId": "bond_mifid_trades",
+        "parameters": [
+          {
+            "description": "Offset for query pagination. A maximum of 10000 results are returned per page.",
+            "example": 20000,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "type": "integer",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "International Securities Identification Number of the bond.",
+            "example": "XS1610682764",
+            "in": "query",
+            "name": "isin",
+            "required": true,
+            "schema": {
+              "maxLength": 12,
+              "minLength": 12,
+              "type": "string",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Issuer type.",
+            "in": "query",
+            "name": "issuer_type",
+            "required": false,
+            "schema": {
+              "enum": [
+                "corporate",
+                "government",
+                "municipal"
+              ],
+              "type": "string",
+              "x-struct": null,
+              "x-transform": "downcase",
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Country of the bond issuer. Matches partial name.",
+            "example": "United States",
+            "in": "query",
+            "name": "country",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Currency of the bond, 3-letter ISO-4217 code. This might differ from the currency of the trade.",
+            "example": "USD",
+            "in": "query",
+            "name": "notional_currency",
+            "required": false,
+            "schema": {
+              "maxLength": 3,
+              "minLength": 3,
+              "type": "string",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Minimum trade datetime in ISO-8601 format.",
+            "example": "2022-10-03T16:21:10Z",
+            "in": "query",
+            "name": "trade_datetime_min",
+            "required": true,
+            "schema": {
+              "format": "date-time",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Maximum trade datetime in ISO-8601 format.",
+            "example": "2022-10-03T16:21:20Z",
+            "in": "query",
+            "name": "trade_datetime_max",
+            "required": true,
+            "schema": {
+              "format": "date-time",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BondMifidTradesResponse"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BondMifidTradesResponse"
+                }
+              }
+            },
+            "description": "MiFID trade data"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "402": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Payment Required"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get bond trades reported under MiFID II regulations for an ISIN.",
+        "tags": []
+      }
+    },
+    "/api/v1/bond_pricing_history": {
+      "get": {
+        "callbacks": {},
+        "operationId": "bond_pricing_history",
+        "parameters": [
+          {
+            "description": "Minimum trade date in ISO-8601 format.",
+            "example": "2023-12-01",
+            "in": "query",
+            "name": "start_date",
+            "required": true,
+            "schema": {
+              "format": "date",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Maximum trade date in ISO-8601 format.",
+            "example": "2024-01-01",
+            "in": "query",
+            "name": "end_date",
+            "required": true,
+            "schema": {
+              "format": "date",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "International Securities Identification Number of the bond.",
+            "example": "XS1610682764",
+            "in": "query",
+            "name": "isin",
+            "required": true,
+            "schema": {
+              "maxLength": 12,
+              "minLength": 12,
+              "type": "string",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BondPricingHistoryResponse"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BondPricingHistoryResponse"
+                }
+              }
+            },
+            "description": "Pricing history data"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "402": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Payment Required"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get historical bond pricing data for an ISIN.",
+        "tags": []
+      }
+    },
+    "/api/v1/bond_pricing_latest": {
+      "get": {
+        "callbacks": {},
+        "operationId": "bond_pricing_latest",
+        "parameters": [
+          {
+            "description": "International Securities Identification Numbers of the bonds.",
+            "explode": false,
+            "in": "query",
+            "name": "isins",
+            "required": true,
+            "schema": {
+              "items": {
+                "example": "XS1610682764",
+                "maxLength": 12,
+                "minLength": 12,
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            },
+            "style": "form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BondPricingLatestResponse"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BondPricingLatestResponse"
+                }
+              }
+            },
+            "description": "Latest pricing data"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "402": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Payment Required"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get latest bond pricing data for ISINs.",
+        "tags": []
+      }
+    },
+    "/api/v1/bond_reference": {
+      "get": {
+        "callbacks": {},
+        "operationId": "bond_reference",
+        "parameters": [
+          {
+            "description": "International Securities Identification Numbers of the bonds.",
+            "explode": false,
+            "in": "query",
+            "name": "isins",
+            "required": true,
+            "schema": {
+              "items": {
+                "example": "XS1610682764",
+                "maxLength": 12,
+                "minLength": 12,
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            },
+            "style": "form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BondReferenceResponse"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BondReferenceResponse"
+                }
+              }
+            },
+            "description": "Reference data"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "402": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Payment Required"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get bond reference data for the given ISINs.",
+        "tags": []
+      }
+    },
+    "/api/v1/bond_screener": {
+      "get": {
+        "callbacks": {},
+        "description": "None of the query parameters is required. If a parameter is not set, any possible value for that parameter will be matched.",
+        "operationId": "bond_screener",
+        "parameters": [
+          {
+            "description": "Offset for query pagination. E.g. if this parameter is 1500, results 1501-2500 will be returned.",
+            "example": 1500,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "type": "integer",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Bond handles.",
+            "explode": false,
+            "in": "query",
+            "name": "handles",
+            "required": false,
+            "schema": {
+              "items": {
+                "enum": [
+                  "de_bobl",
+                  "de_bund",
+                  "de_schatz",
+                  "de_ilb",
+                  "de_green",
+                  "de_bubill",
+                  "uk_gilt",
+                  "uk_green_gilt",
+                  "uk_il_gilt",
+                  "uk_bill",
+                  "fr_btf",
+                  "fr_oat",
+                  "fr_oatei",
+                  "fr_oati"
+                ],
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "downcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Names of issuing entities. Match partial name",
+            "explode": false,
+            "in": "query",
+            "name": "issuers",
+            "required": false,
+            "schema": {
+              "items": {
+                "example": "Santander",
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "International Securities Identification Numbers of the bonds.",
+            "explode": false,
+            "in": "query",
+            "name": "isins",
+            "required": false,
+            "schema": {
+              "items": {
+                "example": "XS1610682764",
+                "maxLength": 12,
+                "minLength": 12,
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Bond currencies, 3-letter ISO 4217 code.",
+            "explode": false,
+            "in": "query",
+            "name": "currencies",
+            "required": false,
+            "schema": {
+              "items": {
+                "example": "USD",
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Legal Entity Identifiers of issuing entities.",
+            "explode": false,
+            "in": "query",
+            "name": "leis",
+            "required": false,
+            "schema": {
+              "items": {
+                "example": "1IE8VN30JCEQV1H4R804",
+                "maxLength": 20,
+                "minLength": 20,
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Legal Entity Identifiers of the direct parents of issuing entities.",
+            "explode": false,
+            "in": "query",
+            "name": "leis_direct_parent",
+            "required": false,
+            "schema": {
+              "items": {
+                "example": "549300LBOHZ4QSIWU288",
+                "maxLength": 20,
+                "minLength": 20,
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Legal Entity Identifiers of the ultimate parents of issuing entities.",
+            "explode": false,
+            "in": "query",
+            "name": "leis_ultimate_parent",
+            "required": false,
+            "schema": {
+              "items": {
+                "example": "MLU0ZO3ML4LN2LL2TL39",
+                "maxLength": 20,
+                "minLength": 20,
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Countries of issuing entities. Match partial name.",
+            "explode": false,
+            "in": "query",
+            "name": "countries",
+            "required": false,
+            "schema": {
+              "items": {
+                "example": "Spain",
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Issuer types.",
+            "explode": false,
+            "in": "query",
+            "name": "issuer_types",
+            "required": false,
+            "schema": {
+              "items": {
+                "enum": [
+                  "corporate",
+                  "government",
+                  "municipal"
+                ],
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "downcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Maturity types.",
+            "explode": false,
+            "in": "query",
+            "name": "maturity_types",
+            "required": false,
+            "schema": {
+              "items": {
+                "enum": [
+                  "fixed",
+                  "amortized",
+                  "perpetual",
+                  "extendible"
+                ],
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "downcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Interest types.",
+            "explode": false,
+            "in": "query",
+            "name": "interest_types",
+            "required": false,
+            "schema": {
+              "items": {
+                "enum": [
+                  "fixed rate",
+                  "zero rate / discount rate",
+                  "variable rate"
+                ],
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "downcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Asset classes.",
+            "explode": false,
+            "in": "query",
+            "name": "asset_classes",
+            "required": false,
+            "schema": {
+              "items": {
+                "enum": [
+                  "bond",
+                  "medium-term note",
+                  "convertible note"
+                ],
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "downcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Whether to include callable bonds.",
+            "example": true,
+            "in": "query",
+            "name": "include_callable",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Whether to include puttable bonds.",
+            "example": false,
+            "in": "query",
+            "name": "include_puttable",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Whether to include non-outstanding bonds. Setting to true will vastly increasse returned results; only set to true if bonds no longer outstanding are truly needed.",
+            "example": false,
+            "in": "query",
+            "name": "include_non_outstanding",
+            "required": false,
+            "schema": {
+              "default": false,
+              "type": "boolean",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Maximum maturity date of the bond in YYYY-MM-DD format.",
+            "example": "2026-12-14",
+            "in": "query",
+            "name": "maturity_date_max",
+            "required": false,
+            "schema": {
+              "format": "date",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Minimum maturity date of the bond in YYYY-MM-DD format.",
+            "example": "2024-09-14",
+            "in": "query",
+            "name": "maturity_date_min",
+            "required": false,
+            "schema": {
+              "format": "date",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Maximum coupon of the bond.",
+            "example": 5.0,
+            "in": "query",
+            "name": "coupon_max",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Minimum coupon of the bond.",
+            "example": 1.0,
+            "in": "query",
+            "name": "coupon_min",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Maximum yield to maturity of the bond.",
+            "example": 5.0,
+            "in": "query",
+            "name": "yield_to_maturity_max",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Minimum yield to maturity of the bond.",
+            "example": 1.0,
+            "in": "query",
+            "name": "yield_to_maturity_min",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Maximum size of the minimum transaction increment of the bond (in nominal value).",
+            "example": 100000,
+            "in": "query",
+            "name": "min_increment_max",
+            "required": false,
+            "schema": {
+              "minimum": 0,
+              "type": "number",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Minimum size of the minimum transaction increment of the bond (in nominal value).",
+            "example": 1000,
+            "in": "query",
+            "name": "min_increment_min",
+            "required": false,
+            "schema": {
+              "minimum": 0,
+              "type": "number",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Maximum size of total amount issued (in nominal value).",
+            "example": 2500000000,
+            "in": "query",
+            "name": "issued_amount_max",
+            "required": false,
+            "schema": {
+              "minimum": 0,
+              "type": "integer",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Minimum size of total amount issued (in nominal value).",
+            "example": 10000000,
+            "in": "query",
+            "name": "issued_amount_min",
+            "required": false,
+            "schema": {
+              "minimum": 0,
+              "type": "integer",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Include only bonds that have traded since this date.",
+            "example": "2023-01-02",
+            "in": "query",
+            "name": "last_trade_date_min",
+            "required": false,
+            "schema": {
+              "format": "date",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Return full reference data as in from /api/v1/bond_reference. This option requires a special account tier.",
+            "example": true,
+            "in": "query",
+            "name": "full_reference_data",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "x-struct": null,
+              "x-validate": null
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BondScreenerResponse"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/BondScreenerResponse"
+                }
+              }
+            },
+            "description": "Partial reference data"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "402": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Payment Required"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "List bonds matching given parameters.",
+        "tags": []
+      }
+    },
+    "/api/v1/muni_reference": {
+      "get": {
+        "callbacks": {},
+        "operationId": "muni_reference",
+        "parameters": [
+          {
+            "description": "International Securities Identification Numbers of the bonds.",
+            "explode": false,
+            "in": "query",
+            "name": "isins",
+            "required": true,
+            "schema": {
+              "items": {
+                "example": "US005824LP01",
+                "maxLength": 12,
+                "minLength": 12,
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            },
+            "style": "form"
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MuniReferenceResponse"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MuniReferenceResponse"
+                }
+              }
+            },
+            "description": "Reference data"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "402": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Payment Required"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "Get US municipal bond reference data for the given ISINs.",
+        "tags": []
+      }
+    },
+    "/api/v1/muni_screener": {
+      "get": {
+        "callbacks": {},
+        "description": "None of the query parameters is required. If a parameter is not set, any possible value for that parameter will be matched.",
+        "operationId": "muni_screener",
+        "parameters": [
+          {
+            "description": "Offset for query pagination. E.g. if this parameter is 1500, results 1501-2500 will be returned.",
+            "example": 1500,
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "minimum": 0,
+              "type": "integer",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "State codes of issuing entities.",
+            "explode": false,
+            "in": "query",
+            "name": "states",
+            "required": false,
+            "schema": {
+              "items": {
+                "example": "CA",
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Names of issuing entities. Match partial name.",
+            "explode": false,
+            "in": "query",
+            "name": "issuers",
+            "required": false,
+            "schema": {
+              "items": {
+                "example": "CAMERON COUNTY",
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "International Securities Identification Numbers of the bonds.",
+            "explode": false,
+            "in": "query",
+            "name": "isins",
+            "required": false,
+            "schema": {
+              "items": {
+                "example": "US157798JU41",
+                "maxLength": 12,
+                "minLength": 12,
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "upcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Tax status.",
+            "in": "query",
+            "name": "tax_status",
+            "required": false,
+            "schema": {
+              "enum": [
+                "Taxable",
+                "Tax-Exempt"
+              ],
+              "example": "Taxable",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Whether the bond is insured.",
+            "example": true,
+            "in": "query",
+            "name": "is_insured",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Interest types.",
+            "explode": false,
+            "in": "query",
+            "name": "interest_types",
+            "required": false,
+            "schema": {
+              "items": {
+                "enum": [
+                  "fixed rate",
+                  "zero rate / discount rate",
+                  "variable rate"
+                ],
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-transform": "downcase",
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Whether to include callable bonds.",
+            "example": true,
+            "in": "query",
+            "name": "include_callable",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Maximum maturity date of the bond in YYYY-MM-DD format.",
+            "example": "2026-12-14",
+            "in": "query",
+            "name": "maturity_date_max",
+            "required": false,
+            "schema": {
+              "format": "date",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Minimum maturity date of the bond in YYYY-MM-DD format.",
+            "example": "2024-09-14",
+            "in": "query",
+            "name": "maturity_date_min",
+            "required": false,
+            "schema": {
+              "format": "date",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Maximum coupon of the bond.",
+            "example": 5.0,
+            "in": "query",
+            "name": "coupon_max",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Minimum coupon of the bond.",
+            "example": 1.0,
+            "in": "query",
+            "name": "coupon_min",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Maximum size of total amount issued (in nominal value).",
+            "example": 2500000000,
+            "in": "query",
+            "name": "issued_amount_max",
+            "required": false,
+            "schema": {
+              "minimum": 0,
+              "type": "integer",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Minimum size of total amount issued (in nominal value).",
+            "example": 10000000,
+            "in": "query",
+            "name": "issued_amount_min",
+            "required": false,
+            "schema": {
+              "minimum": 0,
+              "type": "integer",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Return full reference data as in from /api/v1/muni_reference. This option requires a special account tier.",
+            "example": true,
+            "in": "query",
+            "name": "full_reference_data",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Sources of repayment.",
+            "explode": false,
+            "in": "query",
+            "name": "sources_of_repayment",
+            "required": false,
+            "schema": {
+              "items": {
+                "enum": [
+                  "Revenue",
+                  "General Obligation",
+                  "Double Barrel"
+                ],
+                "example": "Revenue",
+                "type": "string",
+                "x-struct": null,
+                "x-validate": null
+              },
+              "type": "array",
+              "x-struct": null,
+              "x-validate": null
+            },
+            "style": "form"
+          },
+          {
+            "description": "Maximum issue date of the bond in YYYY-MM-DD format.",
+            "example": "2023-12-14",
+            "in": "query",
+            "name": "issue_date_max",
+            "required": false,
+            "schema": {
+              "format": "date",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          },
+          {
+            "description": "Minimum issue date of the bond in YYYY-MM-DD format.",
+            "example": "2021-09-14",
+            "in": "query",
+            "name": "issue_date_min",
+            "required": false,
+            "schema": {
+              "format": "date",
+              "type": "string",
+              "x-struct": null,
+              "x-validate": null
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MuniScreenerResponse"
+                }
+              },
+              "text/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/MuniScreenerResponse"
+                }
+              }
+            },
+            "description": "Partial reference data"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "402": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Payment Required"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonErrorResponse2"
+                }
+              }
+            },
+            "description": "Internal Server Error"
+          }
+        },
+        "summary": "List bonds matching given parameters.",
+        "tags": []
+      }
+    }
+  },
+  "security": [
+    {
+      "authorization": []
+    }
+  ],
+  "servers": [
+    {
+      "url": "https://terrapinfinance.com",
+      "variables": {}
+    }
+  ],
+  "tags": []
+}
