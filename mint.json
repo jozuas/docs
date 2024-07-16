@@ -34,7 +34,7 @@
   "anchors": [
     {
       "name": "API Reference",
-      "openapi": "openapi.json",
+      "openapi": "/openapi.json",
       "url": "openapi-reference",
       "icon": "square-terminal"
     },
